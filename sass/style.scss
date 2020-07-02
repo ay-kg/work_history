@@ -1,3 +1,43 @@
-h1 {
-	color:#fff;
+// mixin定義
+
+
+// color定義
+$main-color: #008DD5;
+$sub-color: #E6F6FF;
+$accent-color: #A9D92F;
+
+// font定義
+$font-family: 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", sans-serif;
+
+// body
+body {
+	font-family: $font-family;
+}
+
+.top_ttl {
+	font-size: 36px;
+	font-weight: bold;
+	color:#000;
+	line-height: 1.9;
+	padding: 5px;
+}
+.bg_anime {
+	animation-name: bg_anime;
+	animation-duration: .5s;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+}
+.start_anime {
+  animation: bg_anime 3s;
+}
+@keyframes bg_anime {
+	0% {
+		background: #000;
+	}
+	50% {
+		background: #000;
+	}
+	100% {
+		background: #000;
+	}
 }

@@ -1,2 +1,2 @@
-h1{color:#fff}
+body{font-family:游ゴシック体,YuGothic,"游ゴシック Medium","Yu Gothic Medium",游ゴシック,"Yu Gothic",sans-serif}.top_ttl{font-size:36px;font-weight:bold;color:#000;line-height:1.9;padding:5px}.bg_anime{-webkit-animation-name:bg_anime;animation-name:bg_anime;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-delay:1s;animation-delay:1s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}.start_anime{-webkit-animation:bg_anime 3s;animation:bg_anime 3s}@-webkit-keyframes bg_anime{0%{background:#000}50%{background:#000}100%{background:#000}}@keyframes bg_anime{0%{background:#000}50%{background:#000}100%{background:#000}}
 /*# sourceMappingURL=style.css.map */
