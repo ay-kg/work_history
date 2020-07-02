@@ -10,6 +10,9 @@ $accent-color: #A9D92F;
 $font-family: 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", sans-serif;
 
 // body
+* {
+	box-sizing: border-box
+}
 body {
 	font-family: $font-family;
 }
@@ -33,26 +36,33 @@ body {
 	font-size: 36px;
 	font-weight: bold;
 	color:#fff;
-	line-height: 1.9;
+	line-height: 1.4;
 	padding: 5px;
 	&_bg {
-	background: #000;
+		background: #000;
+		padding: 0 8px;
 	}
 }
 .top_circle {
-	display: inline-flex;
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	align-content: center;
 	width: 180px;
 	height: 180px;
 	border: $main-color 5px solid;
 	border-radius: 50%;
-	background: #fff;
-}
-.top_circle_txt {
-	text-align: center;
-	font-size: 16px;
+	font-size: 1.4rem;
 	font-weight: bold;
 	color: $main-color;
+	background: #fff;
+	margin: 0 0 0 auto;
+	a {
+		box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+		text-align: center;
+		width: 100%;
+    height: 180px;
+	}
 }
