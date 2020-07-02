@@ -14,30 +14,45 @@ body {
 	font-family: $font-family;
 }
 
+.top_body {
+  background-image: url("/assets/images/main_visual@2x.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+	background-size: cover;
+	height: 40vh; //ディスプレイの高さ
+}
+.img_logo {
+	width: 100px;
+	height: 100px;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
 .top_ttl {
 	font-size: 36px;
 	font-weight: bold;
-	color:#000;
+	color:#fff;
 	line-height: 1.9;
 	padding: 5px;
-}
-.bg_anime {
-	animation-name: bg_anime;
-	animation-duration: .5s;
-	animation-delay: 1s;
-	animation-fill-mode: forwards;
-}
-.start_anime {
-  animation: bg_anime 3s;
-}
-@keyframes bg_anime {
-	0% {
-		background: #000;
+	&_bg {
+	background: #000;
 	}
-	50% {
-		background: #000;
-	}
-	100% {
-		background: #000;
-	}
+}
+.top_circle {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 180px;
+	height: 180px;
+	border: $main-color 5px solid;
+	border-radius: 50%;
+	background: #fff;
+}
+.top_circle_txt {
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: $main-color;
 }
