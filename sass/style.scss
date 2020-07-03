@@ -29,16 +29,44 @@ body {
 		height: auto;
 	}
 }
+.top_ttl_wrap {
+	display: inline-block;
+	position: relative;
+	padding: 5px;
+	z-index: 2;
+	overflow: hidden;
+	&:after{
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top:0;
+		left:0;
+		z-index: -1;
+		background: #000;
+		animation-name: ttl_bg;
+		animation-timing-function: ease;
+		animation-duration: .5s;
+		animation-fill-mode: both;
+	}
+}
+@keyframes ttl_bg {
+	0% {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 .top_ttl {
 	font-size: 36px;
 	font-weight: bold;
 	color:#fff;
 	line-height: 1.9;
-	padding: 5px;
-	&_bg {
-	background: #000;
-	}
 }
+
 .top_circle {
 	display: inline-flex;
 	justify-content: center;
@@ -58,7 +86,18 @@ body {
 }
 .top_nav ul {
 	display: flex;
-	& li {
-		flex : 1 1 auto;
+	li {
+		flex : 0 1 100%;
+		display: flex;
+	}
+}
+.top_nav li a {
+	text-align: center;
+	vertical-align: middle;
+	background: $main-color;
+	width: 100%;
+	padding: 20px;
+	&.nav_form {
+	background: $accent-color;
 	}
 }
