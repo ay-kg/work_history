@@ -56,3 +56,9 @@ body {
 	font-weight: bold;
 	color: $main-color;
 }
+.top_nav ul {
+	display: flex;
+	& li {
+		flex : 1 1 auto;
+	}
+}
