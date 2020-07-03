@@ -86,9 +86,8 @@ body {
 }
 .top_nav ul {
 	display: flex;
-	li {
-		flex : 0 1 100%;
-		display: flex;
+	>:last-child {
+		margin-left: ;
 	}
 }
 .top_nav li a {
@@ -99,5 +98,6 @@ body {
 	padding: 20px;
 	&.nav_form {
 	background: $accent-color;
+	margin-left: auto;
 	}
 }
