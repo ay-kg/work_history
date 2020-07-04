@@ -1,5 +1,13 @@
 // media query定義
-
+$mq-breakpoints: (
+  'sp' : 560px,
+	'tb': 960px,
+);
+@mixin mq($breakpoint: tb) {
+  @media screen and (max-width: #{map-get($mq-breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
 
 // color定義
 $main-color: #008DD5;
@@ -7,7 +15,19 @@ $sub-color: #E6F6FF;
 $accent-color: #A9D92F;
 
 // font定義
+$font-size: 16px;
 $font-family: 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", sans-serif;
+
+
+// リンク定義
+@mixin link-color{
+	color: $main-color;
+	transition: all .5s ease;
+	&:hover{
+		background: $main-color;
+		color: #fff;
+	}
+}
 
 // body
 * {
@@ -15,6 +35,7 @@ $font-family: 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic
 }
 body {
 	font-family: $font-family;
+	font-size: $font-size;
 }
 
 // header
@@ -41,12 +62,15 @@ body {
 	}
 }
 .top_ttl_wrap {
-	margin: 0 100px;
+	margin: 0 0 0 6.4rem;
+	@include mq{
+		margin: 0 0 0 3rem;
+	}
 }
 .top_ttl_wrap span{
 	display: inline-block;
 	position: relative;
-	padding: 5px;
+	padding: 0.5rem;
 	z-index: 2;
 	overflow: hidden;
 	&:after{
@@ -74,7 +98,10 @@ body {
 	}
 }
 .top_ttl {
-	font-size: 36px;
+	font-size: 2.5rem;
+	@include mq{
+		font-size: 1.5rem;
+	}
 	font-weight: bold;
 	color:#fff;
 	line-height: 1;
@@ -83,8 +110,8 @@ body {
 	position: absolute;
 	bottom: 10px;
 	right:10px;
-	width: 180px;
-	height: 180px;
+	width: 10rem;
+	height: 10rem;
 	border: $main-color 5px solid;
 	border-radius: 50%;
 	font-size: 1.4rem;
@@ -95,7 +122,9 @@ body {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	@include link-color;
 }
+
 .top_nav ul {
 	display: flex;
 }
@@ -108,10 +137,20 @@ body {
 		background: $accent-color;
 	}
 }
+.top_nav ul {
+	@include mq{
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			flex:1 0 50%;
+		}
+	}
+}
+
 .top_nav li a {
 	display: block;
 	color: #fff;
-	padding: 20px;
+	padding: 2.0rem;
 	transition:opacity 0.5s ease;
 	&:hover {
 		opacity: 0.7;
