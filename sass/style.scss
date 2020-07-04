@@ -159,7 +159,11 @@ body {
 	max-width: 960px;
 	margin: 0 auto;
 	background: red;
+	@include mq(sp){
+		padding: 20px;
+	}
 }
+
 @mixin main_ttl_txt {
 	position: relative;
 	display: inline-block;
