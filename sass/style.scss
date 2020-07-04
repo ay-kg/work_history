@@ -160,11 +160,50 @@ body {
 	margin: 0 auto;
 	background: red;
 }
-@mixin main_ttl {
+@mixin main_ttl_txt {
+	position: relative;
+	display: inline-block;
 	font-size: 2rem;
 	font-weight: bold;
-
+	padding: 10px 20px;
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		border-top: 1rem solid transparent;
+		border-right: 1rem solid $main-color;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-bottom: 1rem solid transparent;
+		border-left: 1rem solid $main-color;
+	}
 }
-.main_ttl {
-	@include main_ttl;
+.main_ttl{
+	text-align: center;
+	&_txt {
+		@include main_ttl_txt;
+	}
+}
+
+.main_news {
+	max-width: 600px;
+	margin: 0 auto;
+}
+.main_news_body a{
+	display: flex;
+	flex-wrap: wrap;
+	dt {
+		width: 30%;
+	}
+	dd {
+		width: 70%;
+	}
+	&:hover {
+		text-decoration: underline;
+	}
 }
