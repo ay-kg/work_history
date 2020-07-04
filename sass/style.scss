@@ -13,13 +13,9 @@ $mq-breakpoints: (
 $main-color: #008DD5;
 $sub-color: #E6F6FF;
 $accent-color: #A9D92F;
+$font-color: #333;
 
-// font定義
-$font-size: 16px;
-$font-family: 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", sans-serif;
-
-
-// リンク定義
+// パーツ
 @mixin link-color{
 	color: $main-color;
 	transition: all .5s ease;
@@ -27,15 +23,17 @@ $font-family: 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic
 		background: $main-color;
 		color: #fff;
 	}
-}
+}// ホバーで青くなる
+
 
 // body
 * {
 	box-sizing: border-box
 }
 body {
-	font-family: $font-family;
-	font-size: $font-size;
+	font-family: 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", sans-serif;
+	font-size: 1rem;
+	color: $font-color;
 }
 
 // header
@@ -146,7 +144,6 @@ body {
 		}
 	}
 }
-
 .top_nav li a {
 	display: block;
 	color: #fff;
@@ -155,4 +152,19 @@ body {
 	&:hover {
 		opacity: 0.7;
 	}
+}
+
+// main
+.main_body {
+	max-width: 960px;
+	margin: 0 auto;
+	background: red;
+}
+@mixin main_ttl {
+	font-size: 2rem;
+	font-weight: bold;
+
+}
+.main_ttl {
+	@include main_ttl;
 }
