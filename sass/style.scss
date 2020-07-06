@@ -159,7 +159,7 @@ body {
 	padding: 4rem 0 4rem 0;
 	background: #fff;
 	@include mq(sp){
-		padding: 0 20px;
+		padding: 2rem;
 	}
 	&:nth-of-type(even) {
 		background-color: $sub-color;
@@ -199,6 +199,10 @@ body {
 	max-width: 600px;
 	margin: 2rem auto 0 auto;
 }
+.contents_wrap2 {
+	max-width: 900px;
+	margin: 2rem auto 0 auto;
+}
 .main_news_body a{
 	display: flex;
 	flex-wrap: wrap;
@@ -209,6 +213,9 @@ body {
 	}
 	dd {
 		width: 70%;
+		@include mq(sp){
+			width: 100%;
+		}
 	}
 	&:hover {
 		text-decoration: underline;
@@ -247,25 +254,68 @@ body {
 // service
 .service_box {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	background: #fff;
-	padding: 3rem;
+	@include mq(sp){
+		display: flex;
+		flex-direction: column;
+	}
 }
 .service_box_txt {
-	flex: 1 0 50%;
+	width: 50%;
+	padding: 3rem;
+	@include mq(sp){
+		width: 100%;
+		padding: 2rem;
+	}
 }
-.icon_list {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
+.service_box_img {
+	width: 50%;
+	padding: 3rem;
+	@include mq(sp){
+		width: 100%;
+		padding: 0 2rem 2rem 2rem;
+	}
+}
+
+@mixin list_img($margin) {
 	li {
 		width: 80px;
 		height: 80px;
 		object-fit: cover;
-		margin: 0.5rem auto 0 0;
-		&:nth-last-child(3){
-			margin: 0.5rem 0 0 auto;
-		}
+		margin: $margin;
+	}
 	img {
 		width: 100%;
+		max-width: 100%;
+	}
+}
+
+.icon_list_01 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	@include list_img(0 1rem 0 0);
+}
+.icon_list_02 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	@include list_img(1rem 0 0 1rem);
+}
+
+@include mq(sp){
+	.icon_list_01 {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: center;
+		@include list_img(0 0.5rem);
+	}
+	.icon_list_02 {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: center;
+		@include list_img(0.5rem 0.5rem 0 0.5rem);
 	}
 }
