@@ -158,9 +158,12 @@ body {
 .main_body {
 	max-width: 960px;
 	margin: 4rem auto;
-	background: red;
+	background: #fff;
 	@include mq(sp){
 		padding: 0 20px;
+	}
+	&:nth-of-type(even) {
+		background-color: $sub-color;
 	}
 }
 
@@ -193,15 +196,14 @@ body {
 		@include main_ttl_txt;
 	}
 }
-
-.main_news {
+.contents_wrap {
 	max-width: 600px;
 	margin: 2rem auto;
 }
 .main_news_body a{
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	justify-content: center;
 	margin: 1.25rem 0 0 0;
 	dt {
 		width: 30%;
@@ -236,3 +238,6 @@ body {
 		transition: .5s;
 	}
 }
+
+// service
+.servi
