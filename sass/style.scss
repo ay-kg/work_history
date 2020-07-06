@@ -156,8 +156,7 @@ body {
 
 // main
 .main_body {
-	max-width: 960px;
-	margin: 4rem auto;
+	padding: 4rem 0 4rem 0;
 	background: #fff;
 	@include mq(sp){
 		padding: 0 20px;
@@ -198,7 +197,7 @@ body {
 }
 .contents_wrap {
 	max-width: 600px;
-	margin: 2rem auto;
+	margin: 2rem auto 0 auto;
 }
 .main_news_body a{
 	display: flex;
@@ -213,6 +212,12 @@ body {
 	}
 	&:hover {
 		text-decoration: underline;
+	}
+	@include mq(sp){
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
 	}
 }
 .main_news_archive{
@@ -240,4 +245,27 @@ body {
 }
 
 // service
-.servi
+.service_box {
+	display: flex;
+	background: #fff;
+	padding: 3rem;
+}
+.service_box_txt {
+	flex: 1 0 50%;
+}
+.icon_list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	li {
+		width: 80px;
+		height: 80px;
+		object-fit: cover;
+		margin: 0.5rem auto 0 0;
+		&:nth-last-child(3){
+			margin: 0.5rem 0 0 auto;
+		}
+	img {
+		width: 100%;
+	}
+}
