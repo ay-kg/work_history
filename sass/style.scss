@@ -1,27 +1,57 @@
-// mixin定義
-
+// media query定義
+$mq-breakpoints: (
+  'sp' : 560px,
+	'tb': 960px,
+);
+@mixin mq($breakpoint: tb) {
+  @media screen and (max-width: #{map-get($mq-breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
 
 // color定義
 $main-color: #008DD5;
 $sub-color: #E6F6FF;
 $accent-color: #A9D92F;
+$font-color: #333;
 
-// font定義
-$font-family: 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", sans-serif;
+// パーツ
+@mixin link-color{
+	color: $main-color;
+	transition: all .5s ease;
+	&:hover{
+		background: $main-color;
+		color: #fff;
+	}
+}// ホバーで青くなる
+
 
 // body
+* {
+	box-sizing: border-box
+}
 body {
-	font-family: $font-family;
+	font-family: 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", sans-serif;
+	font-size: 1rem;
+	color: $font-color;
 }
 
+// header
 .top_body {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	position: relative;
   background-image: url("/assets/images/main_visual@2x.jpg");
   background-position: center center;
   background-repeat: no-repeat;
 	background-size: cover;
-	height: 40vh; //ディスプレイの高さ
+	height: 60vh; //ディスプレイの高さ
 }
 .img_logo {
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100px;
 	height: 100px;
 	img {
@@ -29,10 +59,16 @@ body {
 		height: auto;
 	}
 }
+.top_ttl_wrap {
+	margin: 0 0 0 6.4rem;
+	@include mq{
+		margin: 0 0 0 3rem;
+	}
+}
 .top_ttl_wrap span{
 	display: inline-block;
 	position: relative;
-	padding: 5px;
+	padding: 0.5rem;
 	z-index: 2;
 	overflow: hidden;
 	&:after{
@@ -59,45 +95,119 @@ body {
 		opacity: 1;
 	}
 }
-
 .top_ttl {
-	font-size: 36px;
+	font-size: 2.5rem;
+	@include mq{
+		font-size: 1.5rem;
+	}
 	font-weight: bold;
 	color:#fff;
-	line-height: 1.9;
+	line-height: 1;
 }
-
 .top_circle {
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-	width: 180px;
-	height: 180px;
+	position: absolute;
+	bottom: 10px;
+	right:10px;
+	width: 10rem;
+	height: 10rem;
 	border: $main-color 5px solid;
 	border-radius: 50%;
-	background: #fff;
-}
-.top_circle_txt {
-	text-align: center;
-	font-size: 16px;
+	font-size: 1.4rem;
 	font-weight: bold;
 	color: $main-color;
+	background: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	@include link-color;
 }
+
 .top_nav ul {
 	display: flex;
-	>:last-child {
-		margin-left: ;
+}
+.top_nav li {
+	display: flex;
+	justify-content: center;
+	background: $main-color;
+	width: 100%;
+	&.nav_form {
+		background: $accent-color;
+	}
+}
+.top_nav ul {
+	@include mq{
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			flex:1 0 50%;
+		}
 	}
 }
 .top_nav li a {
+	display: block;
+	color: #fff;
+	padding: 2.0rem;
+	transition:opacity 0.5s ease;
+	&:hover {
+		opacity: 0.7;
+	}
+}
+
+// main
+.main_body {
+	max-width: 960px;
+	margin: 0 auto;
+	background: red;
+	@include mq(sp){
+		padding: 20px;
+	}
+}
+
+@mixin main_ttl_txt {
+	position: relative;
+	display: inline-block;
+	font-size: 2rem;
+	font-weight: bold;
+	padding: 10px 20px;
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		border-top: 1rem solid transparent;
+		border-right: 1rem solid $main-color;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-bottom: 1rem solid transparent;
+		border-left: 1rem solid $main-color;
+	}
+}
+.main_ttl{
 	text-align: center;
-	vertical-align: middle;
-	background: $main-color;
-	width: 100%;
-	padding: 20px;
-	&.nav_form {
-	background: $accent-color;
-	margin-left: auto;
+	&_txt {
+		@include main_ttl_txt;
+	}
+}
+
+.main_news {
+	max-width: 600px;
+	margin: 0 auto;
+}
+.main_news_body a{
+	display: flex;
+	flex-wrap: wrap;
+	dt {
+		width: 30%;
+	}
+	dd {
+		width: 70%;
+	}
+	&:hover {
+		text-decoration: underline;
 	}
 }
