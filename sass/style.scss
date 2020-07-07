@@ -30,10 +30,13 @@ $font-color: #333;
 * {
 	box-sizing: border-box
 }
+html {
+	font-size: 16px;
+}
 body {
+	color: $font-color;
 	font-family: 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", sans-serif;
 	font-size: 1rem;
-	color: $font-color;
 }
 
 // header
@@ -257,25 +260,25 @@ body {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	background: #fff;
+	padding: 3rem;
 	@include mq(sp){
 		display: flex;
 		flex-direction: column;
+		padding: 1rem;
 	}
 }
 .service_box_txt {
 	width: 50%;
-	padding: 3rem;
 	@include mq(sp){
 		width: 100%;
-		padding: 2rem;
+		padding: 1rem;
 	}
 }
 .service_box_img {
 	width: 50%;
-	padding: 3rem;
 	@include mq(sp){
 		width: 100%;
-		padding: 0 2rem 2rem 2rem;
+		padding: 0 1rem 1rem 1rem;
 	}
 }
 
@@ -291,11 +294,11 @@ body {
 		max-width: 100%;
 	}
 }
-
 .icon_list_01 {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
+	margin: 0 0 0 1rem;
 	@include list_img(0 1rem 0 0);
 }
 .icon_list_02 {
@@ -304,12 +307,12 @@ body {
 	justify-content: flex-end;
 	@include list_img(1rem 0 0 1rem);
 }
-
 @include mq(sp){
 	.icon_list_01 {
 		display: flex;
 		flex-wrap: nowrap;
 		justify-content: center;
+		margin: 0;
 		@include list_img(0 0.5rem);
 	}
 	.icon_list_02 {
@@ -318,4 +321,92 @@ body {
 		justify-content: center;
 		@include list_img(0.5rem 0.5rem 0 0.5rem);
 	}
+}
+.service_button {
+	position: relative;
+	color: $main-color;
+	font-weight: bold;
+	border: $main-color solid 1px;
+	border-radius: 4px;
+	text-align: center;
+	margin: 2rem auto 0 auto;
+	padding: 1rem 2.5rem;
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		border-top: 1rem solid transparent;
+		border-right: 1rem solid $main-color;
+	}
+	@include mq(sp){
+		margin: 0 auto;
+	}
+}
+
+// point
+.point_wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.point_img {
+	flex: 0 1 auto;
+	margin: 2rem 1.5rem 0 0;
+	img {
+		width: 200px;
+		height: 200px;
+		border-radius:50%;
+		object-fit: cover;
+	}
+}
+.point_txt {
+	flex: 1 1 70%;
+	&_ttl {
+		display: inline-block;
+		font-size: 1.5rem;
+		font-weight: bold;
+		border-bottom: 2px solid $main-color;
+		margin: 1rem 0 0 0;
+	}
+	p {
+		margin: 1rem 0 0 0;
+		line-height: 1.5rem;
+	}
+}
+
+// card
+.card_wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	background-color: #fff;
+}
+.card_body {
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 270px;
+	border: 1px solid #E5E5E5;
+	border-radius: 4px;
+	margin: 2rem;
+}
+.card_img {
+	object-fit: cover;
+	img {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+.card_ttl {
+	color: #fff;
+	background: $main-color;
+	padding: 1rem;
+	height: 4rem;
+}
+.card_txt {
+	line-height: 1.5rem;
+	background: #fff;
+	padding: 1rem;
 }
