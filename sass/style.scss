@@ -334,8 +334,8 @@ body {
 	&::before {
 		content: "";
 		position: absolute;
-		bottom: 0;
-		right: 0;
+		bottom: 5px;
+		right: 5px;
 		border-top: 1rem solid transparent;
 		border-right: 1rem solid $main-color;
 	}
@@ -409,4 +409,41 @@ body {
 	line-height: 1.5rem;
 	background: #fff;
 	padding: 1rem;
+}
+
+// request
+
+// footer
+
+.footer {
+	background: $main-color;
+}
+.footer_nav {
+	display: flex;
+	@include mq(sp){
+		display: block;
+	}
+}
+.footer_body {
+	flex: 1 1 20%;
+	font-size: 0.9rem;
+	padding: 3.25rem 0;
+	p {
+		color: #fff;
+		font-weight: bold;
+	}
+	@include mq(sp){
+		display: flex;
+		padding: 2rem;
+	}
+}
+.footer_list {
+	line-height: 2.5;
+	margin: 2.5rem 0 0 0;
+	a {
+		color: #fff;
+		&:hover {
+			border-bottom: solid 1px #fff;
+		}
+	}
 }
