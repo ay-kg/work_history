@@ -199,10 +199,28 @@
 		<section class="main_body">
 			<h2 class="main_ttl"><span class="main_ttl_txt">お問い合わせ</span></h2>
 			<div class="contents_wrap">
-				<div class="request_wrap">
-					<p>お名前</p>
-
-				</div>
+				<form action="#" method="GET" class="form_wrap">
+					<div class="form_item">
+						<label for="name">お名前</label>
+						<input type="text" name="name" maxlength="15" required id="name">
+					</div>
+					<div class="form_item">
+						<label for="email">メールアドレス</label><br>
+						<input type="email" name="email" required id="email">
+					</div>
+					<div class="form_item">
+						<p>お問い合わせ種別</p>
+						<select name="inquiry" required id="inquiry">
+							<option value="find1">選択肢1</option>
+							<option value="find2">選択肢2</option>
+							<option value="find3">選択肢3</option>
+						</select>
+					</div>
+					<div class="form_item">
+						<label for="massage">お問い合わせ内容</label>
+						<textarea name="massage" required id="massage" cols="30" rows="10"></textarea>
+					</div>
+				</form>
 			</div>
 		</section>
 	</main>
