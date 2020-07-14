@@ -205,20 +205,22 @@
 						<input type="text" name="name" maxlength="15" required id="name">
 					</div>
 					<div class="form_item">
-						<label for="email">メールアドレス</label><br>
+						<label for="email">メールアドレス</label>
 						<input type="email" name="email" required id="email">
 					</div>
 					<div class="form_item">
-						<p>お問い合わせ種別</p>
-						<select name="inquiry" required id="inquiry">
-							<option value="find1">選択肢1</option>
-							<option value="find2">選択肢2</option>
-							<option value="find3">選択肢3</option>
-						</select>
+						<label for="inquiry">お問い合わせ種別</label>
+						<div class="select_box">
+							<select name="inquiry" required id="inquiry">
+								<option value="find1">選択肢1</option>
+								<option value="find2">選択肢2</option>
+								<option value="find3">選択肢3</option>
+							</select>
+						</div>
 					</div>
 					<div class="form_item">
 						<label for="massage">お問い合わせ内容</label>
-						<textarea name="massage" required id="massage" cols="30" rows="10"></textarea>
+						<textarea name="massage" required id="massage" rows="5"></textarea>
 					</div>
 				</form>
 			</div>
